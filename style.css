@@ -1,61 +1,68 @@
-/* Import Google Font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600;700&display=swap");
+/* Import Google Font - Lora */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Merriweather", sans-serif;
+  font-family: "Lora", serif;
 }
 
 body {
   display: flex;
-  padding: 0 10px;
+  padding: 0 20px;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #0f172a;
+  background: #f3f4f6; /* Light gray background for a clean look */
 }
 
 ::selection {
-  color: #fff;
-  background: deepskyblue;
+  color: #f8f9fa;
+  background: #6c63ff; /* Soft purple selection highlight */
 }
 
 .wrapper {
-  width: 770px;
-  padding: 35px;
-  background: #0f172a;
-  color: #f1f5f9;
-  border-radius: 10px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  width: 800px;
+  padding: 40px;
+  background: #ffffff; /* White background for clarity */
+  color: #2d3748; /* Dark gray text */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .wrapper .input-field {
   opacity: 0;
-  z-index: -999;
+  z-index: -1;
   position: absolute;
 }
 
 .wrapper .content-box {
-  padding: 13px 20px 0;
-  border-radius: 10px;
-  border: 1px solid #bfbfbf;
+  padding: 15px 25px 10px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0; /* Soft gray border */
+  background: #edf2f7; /* Light gray-blue background */
 }
 
 .content-box .typing-text {
   overflow: hidden;
-  max-height: 256px;
+  max-height: 250px;
 }
 
 .typing-text::-webkit-scrollbar {
-  width: 0;
+  width: 5px;
+}
+
+.typing-text::-webkit-scrollbar-thumb {
+  background: #a0aec0; /* Scrollbar thumb color */
+  border-radius: 5px;
 }
 
 .typing-text p {
-  font-size: 25px;
+  font-size: 22px;
+  line-height: 1.6;
   text-align: justify;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
 }
 
 .typing-text p span {
@@ -63,18 +70,18 @@ body {
 }
 
 .typing-text p span.correct {
-  color: lawngreen;
+  color: #48bb78; /* Soft green for correct text */
 }
 
 .typing-text p span.incorrect {
-  color: #cb3439;
-  outline: 1px solid #fff;
-  background: #ffc0cb;
+  color: #e53e3e; /* Red for incorrect text */
+  outline: 1px solid #f56565;
+  background: #fed7d7; /* Light red background for visibility */
   border-radius: 4px;
 }
 
 .typing-text p span.active {
-  color: deepskyblue;
+  color: #6c63ff; /* Purple for active word */
 }
 
 .typing-text p span.active::before {
@@ -85,8 +92,8 @@ body {
   bottom: 0;
   left: 0;
   opacity: 0;
-  border-radius: 5px;
-  background: deepskyblue;
+  border-radius: 4px;
+  background: #6c63ff;
   animation: blink 1s ease-in-out infinite;
 }
 
@@ -97,76 +104,79 @@ body {
 }
 
 .content-box .content {
-  margin-top: 17px;
+  margin-top: 20px;
   display: flex;
-  padding: 12px 0;
+  padding: 15px 0;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #bfbfbf;
-  line-break: auto;
+  border-top: 1px solid #e2e8f0; /* Soft gray border */
 }
 
 .content button {
   outline: none;
   border: none;
-  width: 105px;
-  color: #fff;
-  padding: 8px 0;
+  width: 110px;
+  color: #ffffff;
+  padding: 10px 0;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
-  background: deepskyblue;
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  background: #6c63ff; /* Purple button */
+  transition: all 0.3s ease;
+}
+
+.content button:hover {
+  background: #5a54d6; /* Slightly darker purple on hover */
 }
 
 .content button:active {
-  transform: scale(0.97);
+  transform: scale(0.95);
 }
 
 .content .result-details {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: calc(100% - 140px);
+  width: calc(100% - 150px);
   justify-content: space-between;
 }
 
 .result-details li {
   display: flex;
-  height: 20px;
+  height: 22px;
   list-style: none;
   position: relative;
   align-items: center;
 }
 
 .result-details li:not(:first-child) {
-  padding-left: 22px;
-  border-left: 1px solid #bfbfbf;
+  padding-left: 25px;
+  border-left: 1px solid #e2e8f0; /* Soft gray separator */
 }
 
 .result-details li p {
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .result-details li span {
   display: block;
   font-size: 20px;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
 li span b {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 li:not(:first-child) span {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .errors span {
-  color: #facc15;
+  color: #f56565; /* Brighter red for error text */
 }
 
 .timeLeft span {
-  color: #cb3439;
+  color: #e53e3e; /* Consistent red for time left warnings */
 }
